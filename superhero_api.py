@@ -1,4 +1,4 @@
-import requests
+import request
 
 class SuperHeroAPIService:
     BASE_URL = "https://superheroapi.com/api"
