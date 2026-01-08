@@ -40,6 +40,20 @@ class FanPageCLI:
         print(f"Alter Egos    : {bio.get('alter-egos', 'N/A')}")
         print(f"Place of Birth: {bio.get('place-of-birth', 'N/A')}")
         print(f"Alignment     : {bio.get('alignment', 'N/A')}")
+    
+    def display_threat_level(self, hero):
+        stats = hero.get("powerstats", {})
+        try:
+            total = sum(int(v) for v in stats.values() if v.isdigit())
+            print("\n[THREAT LEVEL]")
+            if total > 400:
+                print("Threat Level : EXTREME")
+            elif total > 250:
+                print("Threat Level : HIGH")
+            else:
+                print("Threat Level : MODERATE")
+        except Exception:
+            print("\n[THREAT LEVEL]\nThreat Level : UNKNOWN")
 
     def run(self):
         universe = self.choose_universe()
