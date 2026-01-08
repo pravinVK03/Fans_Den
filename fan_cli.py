@@ -54,6 +54,14 @@ class FanPageCLI:
                 print("Threat Level : MODERATE")
         except Exception:
             print("\n[THREAT LEVEL]\nThreat Level : UNKNOWN")
+        
+    def display_combat_profile(self, hero):
+        stats = hero.get("powerstats", {})
+        print("\n[COMBAT PROFILE]")
+        print(f"Combat       : {stats.get('combat', 'N/A')}")
+        print(f"Intelligence : {stats.get('intelligence', 'N/A')}")
+        print(f"Strength     : {stats.get('strength', 'N/A')}")
+
 
     def run(self):
         universe = self.choose_universe()
