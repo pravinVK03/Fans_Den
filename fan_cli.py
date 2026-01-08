@@ -40,6 +40,11 @@ class FanPageCLI:
         print(f"Alter Egos    : {bio.get('alter-egos', 'N/A')}")
         print(f"Place of Birth: {bio.get('place-of-birth', 'N/A')}")
         print(f"Alignment     : {bio.get('alignment', 'N/A')}")
+<<<<<<< HEAD
+def display_power_class(self, hero):
+    bio = hero.get("biography", {})
+    name = hero.get("name", "").lower()
+=======
     
     def display_threat_level(self, hero):
         stats = hero.get("powerstats", {})
@@ -62,8 +67,18 @@ class FanPageCLI:
         print(f"Intelligence : {stats.get('intelligence', 'N/A')}")
         print(f"Strength     : {stats.get('strength', 'N/A')}")
 
+>>>>>>> ee1e798eca7c8089ee64a6e0b094b4d05b056641
 
-    def run(self):
+    print("\n[POWER CLASS]")
+    if "alien" in bio.get("place-of-birth", "").lower():
+        print("Class : Cosmic / Alien")
+    elif "mutant" in bio.get("alter-egos", "").lower():
+        print("Class : Mutant")
+    elif "god" in name or "asgard" in bio.get("place-of-birth", "").lower():
+        print("Class : Mystic / God")
+    else:
+        print("Class : Human / Tech-Based")
+def run(self):
         universe = self.choose_universe()
         if not universe:
             return
